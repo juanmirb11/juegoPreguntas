@@ -201,6 +201,7 @@ function sinSalida() {
         }
     }
     if (sinSalida) {
+        document.getElementById("derrota0vidas").style.display = "none"
         document.getElementById("derrotaEncerrado").style.display = "block"
         document.getElementById("tablero").style.display = "none"
         document.getElementById("normas").style.display = "none"
