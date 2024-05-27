@@ -192,4 +192,5 @@ function normas() {
 
 function reiniciar() {
     location.reload()
+    console.log("Pagina recargada")
 }
