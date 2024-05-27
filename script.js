@@ -150,14 +150,9 @@ function preguntar(factual, cactual) {
 
     if (respuestaUsu && respuestaUsu.toLocaleLowerCase() === pregunta.respuesta.toLocaleLowerCase()) {
         if (("but" + factual + cactual) === ("but" + fila + columna)) {
-            actual.style.backgroundColor = "purple"
-            for (let i = 1; i <= 4; i++) {
-                for (let j = 1; j <= 4; j++) {
-                    let boton = document.getElementById("but" + i + j)
-                    boton.disabled = true
-                }
-            }
-            alert("¡Has ganado!")
+            document.getElementById("victoria").style.display = "block"
+            document.getElementById("tablero").style.display = "none"
+            document.getElementById("normas").style.display = "none"
         } else {
             actual.style.backgroundColor = "green"
             alert("¡Respuesta correcta!")
@@ -193,4 +188,8 @@ function preguntar(factual, cactual) {
 
 function normas() {
     alert("Normas:\n Empiezas clicando en una casilla, por cada casilla que cliques tendrás que responder una pregunta.\n Si fallas 3 preguntas estás eliminado.\n El objetivo es llegar a la casilla oculta y responder correctamente la pregunta, si fallas en esta casilla estás eliminado.")
+}
+
+function reiniciar() {
+    location.reload()
 }

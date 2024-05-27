@@ -17,7 +17,7 @@ body {
     margin: 0;
 }
 
-#normas {
+.opcion {
     height: 33px;
     width: 100px;
     background-color: lightgrey;
@@ -25,6 +25,6 @@ body {
     margin-top: 20px;
 }
 
-#normas:hover {
+.opcion:hover {
     background-color: white;
 }
