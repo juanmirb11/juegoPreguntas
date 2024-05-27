@@ -1,0 +1,30 @@
+button {
+    height: 100px;
+    width: 100px;
+    background-color: lemonchiffon;
+}
+
+button:hover {
+    background-color: wheat;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+#normas {
+    height: 33px;
+    width: 100px;
+    background-color: lightgrey;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+#normas:hover {
+    background-color: white;
+}
