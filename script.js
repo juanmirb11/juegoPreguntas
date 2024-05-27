@@ -160,30 +160,21 @@ function preguntar(factual, cactual) {
     } else {
         if (vidas != 0) {
             if (("but" + factual + cactual) === ("but" + fila + columna)) {
-                alert("Esta era la casilla de victoria. Game Over.")
-                actual.style.backgroundColor = "red"
-                for (let i = 1; i <= 4; i++) {
-                    for (let j = 1; j <= 4; j++) {
-                        let boton = document.getElementById("but" + i + j)
-                        boton.disabled = true
-                    }
-                }
+                document.getElementById("derrotaCasillaVictoria").style.display = "block"
+                document.getElementById("tablero").style.display = "none"
+                document.getElementById("normas").style.display = "none"
             } else {
                 vidas--
                 alert("¡Respuesta incorrecta! Vidas restantes: " + (vidas + 1))
                 actual.style.backgroundColor = "red"
             }
         } else {
-            alert("Game Over")
-            actual.style.backgroundColor = "red"
-            for (let i = 1; i <= 4; i++) {
-                for (let j = 1; j <= 4; j++) {
-                    let boton = document.getElementById("but" + i + j)
-                    boton.disabled = true
-                }
-            }
+            document.getElementById("derrota0vidas").style.display = "block"
+            document.getElementById("tablero").style.display = "none"
+            document.getElementById("normas").style.display = "none"
         }
     }
+    sinSalida()
 }
 
 function normas() {
@@ -193,4 +184,25 @@ function normas() {
 function reiniciar() {
     location.reload()
     console.log("Pagina recargada")
+}
+
+function sinSalida() {
+    let sinSalida = true
+    for (i = 1; i <= 4; i++) {
+        for (j = 1; j <= 4; j++) {
+            let boton = document.getElementById("but"+i+j)
+            if (boton && !boton.disabled) {
+                sinSalida = false
+                break
+            }
+        }
+        if (!sinSalida) {
+            break
+        }
+    }
+    if (sinSalida) {
+        document.getElementById("derrotaEncerrado").style.display = "block"
+        document.getElementById("tablero").style.display = "none"
+        document.getElementById("normas").style.display = "none"
+    }
 }
