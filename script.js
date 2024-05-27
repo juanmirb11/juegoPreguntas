@@ -117,19 +117,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
 function pulsar(fpulsada, cpulsada) {
 
-    let botonPulsado = document.getElementById("but" + fpulsada + cpulsada)
-    botonPulsado.style.backgroundColor = "yellow"
-
     factual = fpulsada
     cactual = cpulsada
 
     for (let i = 1; i <= 4; i++) {
         for (let j = 1; j <= 4; j++) {
-            let boton = document.getElementById("but" + i + j);
-            if (Math.abs(fpulsada - i) + Math.abs(cpulsada - j) !== 1 || boton.style.backgroundColor === "yellow") {
-                boton.disabled = true;
+            let boton = document.getElementById("but" + i + j)
+            if (Math.abs(fpulsada - i) + Math.abs(cpulsada - j) !== 1 || boton.style.backgroundColor === "red" || boton.style.backgroundColor === "green") {
+                boton.disabled = true
             } else {
-                boton.disabled = false;
+                boton.disabled = false
             }
         }
     }
